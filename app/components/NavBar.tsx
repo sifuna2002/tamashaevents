@@ -2,7 +2,7 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
+  Collapse,
   Typography,
   Button,
   IconButton,
@@ -26,7 +26,7 @@ export function NavBar() {
         color="black"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="events" className="flex items-center">
           Events
         </a>
       </Typography>
@@ -57,16 +57,6 @@ export function NavBar() {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
-          Docs
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="black"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
           Create Event
         </a>
       </Typography>
@@ -78,7 +68,7 @@ export function NavBar() {
       <div className="container mx-auto flex items-center justify-between text-black">
         <Typography
           as="a"
-          href="#"
+          href="/"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
           Tamasha
@@ -125,14 +115,14 @@ export function NavBar() {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
+      <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
           <Button variant="gradient" color="white" size="sm" fullWidth className="mb-2">
             <span>Contact Us</span>
           </Button>
         </div>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }
