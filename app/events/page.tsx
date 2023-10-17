@@ -5,7 +5,7 @@ export default function Events() {
     return (
         <>
         <NavBar />
-        <Footer />
+        {/* <Footer /> */}
         </>
     )
 }
