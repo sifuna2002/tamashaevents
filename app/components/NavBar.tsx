@@ -198,9 +198,9 @@ export function NavBar() {
             >
               Fill the details below to create a new event.
             </Typography>
-            <Input variant="standard" name="event" inputRef={eventRef} label="Event Name" />
-            <Input variant="standard" inputRef={durationRef} label="Event Duration" />
-            <Input variant="standard" inputRef={descriptionRef} label="Event Description" />
+            <Input variant="standard" name="event" inputRef={eventRef} label="Event Name" crossOrigin={undefined} />
+            <Input variant="standard" inputRef={durationRef} label="Event Duration" crossOrigin={undefined} />
+            <Input variant="standard" inputRef={descriptionRef} label="Event Description" crossOrigin={undefined} />
           </CardBody>
           <CardFooter className="pt-0">
           <Button size="sm" onClick={handleSubmit} className="w-full bg-[#C1205C]">
