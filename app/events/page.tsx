@@ -61,7 +61,7 @@ export default function Events() {
                             <div className="flex w-78 flex-col mt-5 items-end gap-6">
                                 <Input size="lg" color="indigo" label="Participant Code" crossOrigin={undefined} />
                             </div>
-                            <div className="relative flex w-full mt-3 max-w-[24rem]">
+                            <div className="relative flex w-full mt-3 max-w-78">
                                 <Menu placement="bottom-start">
                                     <MenuHandler>
                                     <Button
