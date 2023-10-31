@@ -13,10 +13,12 @@ import {
   import db from "../../firebase";
   import {collection, getDocs} from "firebase/firestore";
 import React from "react";
+import { CalendarDaysIcon } from "@heroicons/react/20/solid";
 interface Event {
     id: string;
     eventName: string;
-    eventDuration: string;
+    eventStartDate: string;
+    eventEndDate: string;
     eventDescription: string;
 }
 
@@ -128,6 +130,22 @@ export default function Events() {
                                     <p className="text-sm text-gray-500 mt-2">
                                         {event.eventDescription}
                                     </p>
+                                    {/* events start and end dates */}
+                                    <div className="flex items-center mt-5">
+                                        <CalendarDaysIcon className="h-6 w-6 mr-2 text-[#C1205C]" />
+                                        <p className="text-xs text-gray-500">
+                                        From
+                                        </p>
+                                        <p className="text-xs text-[#C1205C] ml-1">
+                                        {event.eventStartDate}
+                                        </p>
+                                        <p className="text-xs text-gray-500 ml-2">
+                                        To
+                                        </p>
+                                        <p className="text-xs text-[#C1205C] ml-1">
+                                        {event.eventEndDate}
+                                        </p>
+                                    </div>
                                     <div className="flex items-center mt-5">
                                         {/* vote now button*/}
                                         <button

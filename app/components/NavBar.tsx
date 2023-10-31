@@ -36,7 +36,8 @@ export function NavBar() {
   const [openAlert, setOpenAlert] = React.useState(false);
 
   const eventRef = React.useRef<HTMLInputElement>(null);
-  const durationRef = React.useRef<HTMLInputElement>(null);
+  const startDateRef = React.useRef<HTMLInputElement>(null);
+  const endDateRef = React.useRef<HTMLInputElement>(null);
   const descriptionRef = React.useRef<HTMLInputElement>(null);
 
 
@@ -47,7 +48,8 @@ export function NavBar() {
     const docRef = doc(db, "events", "event_"+new Date().getTime());
     await setDoc(docRef, {
       eventName: eventRef.current?.value,
-      eventDuration: durationRef.current?.value,
+      eventStartDate: startDateRef.current?.value,
+      eventEndDate: endDateRef.current?.value,
       eventDescription: descriptionRef.current?.value,
     });
     setOpenAlert(true);
@@ -199,7 +201,9 @@ export function NavBar() {
               Fill the details below to create a new event.
             </Typography>
             <Input variant="standard" name="event" inputRef={eventRef} label="Event Name" crossOrigin={undefined} />
-            <Input variant="standard" inputRef={durationRef} label="Event Duration" crossOrigin={undefined} />
+            {/* start and end date */}
+            <Input variant="standard" inputRef={startDateRef} type="date" label="Event Start Date" crossOrigin={undefined} />
+            <Input variant="standard" inputRef={endDateRef} type="date" label="Event End Date" crossOrigin={undefined} />
             <Input variant="standard" inputRef={descriptionRef} label="Event Description" crossOrigin={undefined} />
           </CardBody>
           <CardFooter className="pt-0">
