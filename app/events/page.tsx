@@ -73,7 +73,7 @@ export default function Events() {
                             <p className="mt-4 text-gray-600">
                             {activeEvent?.eventDescription}
                             </p>
-                            {activeEvent?.eventEndDate < new Date() ? (
+                            {new Date(activeEvent?.eventEndDate) > new Date() ? (
                                 <>
                                     {/* enter participants code */}
                             <div className="flex w-78 flex-col mt-5 items-end gap-6">
